@@ -65,7 +65,8 @@
   :root {
     --first-main-color: #384987;
     --second-main-color: #d22b27;
-    --control-nav-color: black;
+    --menu-nav-color: black;
+    --nav-buttons-opacity: 0.7;
   }
 
 * {
@@ -152,25 +153,39 @@ ul.up-main-nav__items{
     position: relative;
     line-height: 5rem;
     outline: none;
-    opacity: 0.7;
+    opacity: var(--nav-buttons-opacity);
 }
 
 /* LOGIN BAR */
 .up-control-nav__items {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    max-width: 9.5rem;
 }
 .up-control-nav__items li{
     text-decoration: none;
     list-style: none;
     margin: auto 0.7rem;
     cursor: pointer;
+    min-width: 1.5rem;
+    max-width: 2rem;
+}
+.up-control-nav__items li:hover a,
+.up-control-nav__items li:active a,
+.up-control-nav__items li:hover {
+  color: var(--first-main-color);
+  opacity: 1;
+  transform: scale(1.2, 1.2);
+  transition: all 0.1s ease-in-out 0s;
+  
 }
 .up-control-nav__items a{
-    color: var(--control-nav-color);
+    color: var(--menu-nav-color);
+    opacity: var(--nav-buttons-opacity);
     text-decoration: none;
-    font-weight: 900;
+    font-weight: 800;
+    
 }
 
 
@@ -189,11 +204,12 @@ ul.up-main-nav__items{
     align-items: flex-start;
     box-shadow: 10px 10px 20px lightgrey;
     /* border: 1px darkgrey solid; */
-    padding: 0rem 3rem;
+    padding: 1rem 3rem;
 }
 .up-megamenu-container ul{
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .up-megamenu-container ul.up-megamenu__items{
@@ -209,6 +225,9 @@ ul.up-main-nav__items{
     display: block;
     line-height: 2rem;
     text-align: center;
+}
+.up-megamenu-item > a span{
+  vertical-align: middle;
 }
 
 .up-megamenu-title a{
