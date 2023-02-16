@@ -77,13 +77,14 @@
 
 body{
     font-family: 'Lato', sans-serif;
-    
+    overflow: auto
 }
 
 header.up-main-header{
     display: flex;
     /* background-color: green; */
-    position: fixed;
+    /* Edited from fixed for test purpose */
+    position: relative;
     top: 0;
     left: 0;
     border-bottom: 0.1rem lightgray solid;
@@ -93,6 +94,7 @@ header.up-main-header{
     align-items: center;
     padding: 0rem 10rem;
     flex-wrap: wrap;
+
 }
 
 /* LOGO BAR */
@@ -108,8 +110,6 @@ ul.up-main-nav__items{
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0;
-    padding: 0;
     height: 100%;
 }
 
@@ -202,6 +202,7 @@ ul.up-main-nav__items{
 .up-main-nav__items li:hover .up-megamenu-container{
     display: flex;
     position: absolute;
+    left: calc(90vw - 100vw);
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
@@ -210,6 +211,8 @@ ul.up-main-nav__items{
     padding: 1rem 3rem;
     background-color: white;
     min-width: 20vw;
+    /* flex-wrap: wrap; */
+    
 }
 
 /* .up-megamenu-container ul{
@@ -233,21 +236,25 @@ ul.up-main-nav__items{
 .up-megamenu-item > a{  
   text-decoration: none;
   display: block;
-  line-height: 1rem;
+  /* line-height: 1.0rem; */
   text-align: center;
 }
-.up-megamenu-item{
-  margin: 0.2rem auto;
+li.up-megamenu-item{
+  display: block;
+  width: 100%;
+  padding: 0.3rem;
 }
 
 .up-megamenu-item a{
   color: var(--menu-nav-color);
   font-weight: 700;
   opacity: var(--nav-buttons-opacity);
+  
 }
 
-li.up-megamenu-item:hover{
-  color: pink;
+li.up-megamenu-item:hover a{
+  color:var(--first-main-color);
+  opacity: 1;
 }
 
 .up-megamenu-title a{
@@ -260,6 +267,30 @@ li.up-megamenu-item:hover{
   color: var(--menu-nav-color);
 }
 
+
+.up-megamenu__bestselling{
+  border-bottom: 0.2rem transparent solid;
+  border-right: 0.2rem transparent solid;
+}
+.up-megamenu__bestselling img{
+  display: block;
+  height: 10rem;
+  margin: auto;
+  
+}
+.up-bestselling-title{
+  height: 3rem;
+}
+.up-megamenu__bestselling a{
+  display: block;
+  margin: 1rem;
+}
+.up-megamenu__bestselling:hover{
+  border-bottom: 0.2rem var(--second-main-color) solid;
+  border-right: 0.2rem var(--second-main-color) solid;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out 0s;
+}
 
 
 
