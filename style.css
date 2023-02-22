@@ -1,3 +1,4 @@
+@import "~swiper/css";
 @font-face {
     font-family: "Lato";
     src: url("/resources/fonts/Lato/Lato-Black.ttf") format("truetype");
@@ -214,6 +215,7 @@ ul.up-main-nav__items{
     min-width: 60vw;
     flex-wrap: wrap;
     transition: all 0.1s ease-in-out 0s;
+    z-index: 100;
 }
 
 /* .up-megamenu-container ul{
@@ -324,5 +326,8 @@ li.up-megamenu__bestselling,
   text-transform: uppercase;
 }
 
-
+.swiper {
+  width: 100%;
+  height: 40rem;
+}
 
